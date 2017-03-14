@@ -11,7 +11,11 @@ end
 
 group :development do
   gem 'sqlite3'
+#  gem 'pry-rails'
+#  gem 'coderay', '~> 1.1.1'
 end
+
+gem 'pry-rails', :group => :development
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
