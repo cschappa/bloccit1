@@ -36,4 +36,17 @@ RSpec.describe User, type: :model do
       expect(user_with_invalid_email).to_not be_valid
     end
   end
+
+  describe "with lower case name" do
+    let(:user_with_lowcase_name) { User.create!(name: "my name", email: "user@blocit.com", password: "password")}
+
+    it "should capitalize name" do
+      expect(user_with_lowcase_name).to have_attributes(name: "My Name")
+    end
+
+    it "should work with properly formated name" do
+      expect(user).to have_attributes(name: "Blocit User")
+    end
+
+  end
 end
