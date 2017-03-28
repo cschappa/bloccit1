@@ -18,4 +18,10 @@ class UsersController < ApplicationController
       render :new
     end
   end
+
+  def confirm
+    @new_user = User.new
+    @new_user.name = params[:user][:name]
+    @new_user.email = params[:user][:email]
+  end
 end
